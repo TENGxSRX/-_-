@@ -1,0 +1,30 @@
+{
+  "name": "normalized_world",
+  "columns": [
+    "nose_x_world_hip_centered_scaled",
+    "nose_y_world_hip_centered_scaled",
+    "nose_z_world_hip_centered_scaled",
+    "left_shoulder_x_world_hip_centered_scaled",
+    "left_shoulder_y_world_hip_centered_scaled",
+    "left_shoulder_z_world_hip_centered_scaled",
+    "right_shoulder_x_world_hip_centered_scaled",
+    "right_shoulder_y_world_hip_centered_scaled",
+    "right_shoulder_z_world_hip_centered_scaled",
+    "left_hip_x_world_hip_centered_scaled",
+    "left_hip_y_world_hip_centered_scaled",
+    "left_hip_z_world_hip_centered_scaled",
+    "right_hip_x_world_hip_centered_scaled",
+    "right_hip_y_world_hip_centered_scaled",
+    "right_hip_z_world_hip_centered_scaled"
+  ],
+  "core_landmarks": [
+    "nose",
+    "left_shoulder",
+    "right_shoulder",
+    "left_hip",
+    "right_hip"
+  ],
+  "coordinate_representation": "MediaPipe Pose World Landmarks in meters, translated by hip midpoint",
+  "normalization_formula": "For normalized_world: divide all hip-centered core XYZ coordinates by ||(left_shoulder + right_shoulder)/2||_2; world family uses translation only.",
+  "adapter_version": "rgb_native_v4_world_hip_centered"
+}

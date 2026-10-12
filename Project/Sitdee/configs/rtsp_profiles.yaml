@@ -1,0 +1,35 @@
+# Secret-free Hikvision profile templates.
+# Host, username and password are supplied through .env or process variables.
+# The exact camera settings must be verified when the physical camera arrives.
+
+profiles:
+  HIKVISION_MAIN:
+    camera_id: CAM01
+    stream_kind: main
+    stream_path: /Streaming/Channels/101
+  HIKVISION_SUB:
+    camera_id: CAM01
+    stream_kind: sub
+    stream_path: /Streaming/Channels/102
+
+presets:
+  RTSP_DESKTOP:
+    process_every: 1
+    inference_max_width: null
+    inference_max_height: null
+    stale_after_seconds: 2.0
+    low_latency_buffer_request: true
+  RTSP_BALANCED:
+    process_every: 2
+    inference_max_width: 1280
+    inference_max_height: 720
+    stale_after_seconds: 2.0
+    low_latency_buffer_request: true
+  RTSP_LOW_LATENCY:
+    process_every: 1
+    inference_max_width: 960
+    inference_max_height: 540
+    stale_after_seconds: 1.0
+    low_latency_buffer_request: true
+    latest_frame_only: true
+    clean_ui: true

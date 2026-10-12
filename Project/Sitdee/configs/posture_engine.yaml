@@ -1,0 +1,25 @@
+# ERGONOMIC POSTURE ENGINE V1 project settings.
+# These values are product behavior settings, not medical or clinical thresholds.
+minimum_warning_duration: 15.0
+high_risk_duration: 60.0
+smoothing_window: 5
+minimum_pose_visibility: 0.5
+recovery_duration: 3.0
+warning_cooldown: 15.0
+minimum_confidence: 0.5
+frame_interval_seconds: 0.03333333333333333
+minimum_persistence_duration: 0.5
+
+indicator_thresholds:
+  shoulder_tilt_deg: 8.0
+  head_forward_proxy: 0.20
+  slouch_trunk_angle_deg: 20.0
+  lateral_lean: 0.20
+
+# Experimental activity gate only; this is not a trained Sit/Stand model.
+activity_gate:
+  visibility_threshold: 0.5
+  standing_knee_angle_min_deg: 155.0
+  sitting_knee_angle_max_deg: 140.0
+  vertical_order_margin: 0.02
+  transition_confirmations: 3

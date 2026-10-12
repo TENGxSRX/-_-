@@ -1,0 +1,29 @@
+{
+  "dataset_ref": "chanankornjandaeng/anya-a-dataset-for-ergonomic-posture-analysis",
+  "kaggle_dataset_url": "https://www.kaggle.com/datasets/chanankornjandaeng/anya-a-dataset-for-ergonomic-posture-analysis",
+  "checked_date": "2026-09-05",
+  "current_version": 1,
+  "versions_returned_by_official_view_endpoint": [
+    {
+      "version_number": 1,
+      "version_notes": "Initial release",
+      "status": "Ready",
+      "creation_date": "2025-12-21T01:45:48.213Z"
+    }
+  ],
+  "version_probe": {
+    "version_1": "available",
+    "version_2": "404_not_found",
+    "version_3": "404_not_found",
+    "version_4": "404_not_found"
+  },
+  "version_1_file_list": [
+    {"name": "ANN.csv", "bytes": 1991620993},
+    {"name": "Random_Forest.csv", "bytes": 1991620993},
+    {"name": "lgbm.csv", "bytes": 1991620993},
+    {"name": "xgb.csv", "bytes": 1991620993}
+  ],
+  "historical_full_download_performed": false,
+  "historical_label_sidecar_found": false,
+  "notes": "The official current metadata exposed only version 1. No historical version was downloaded or used, and the current local release was not overwritten."
+}

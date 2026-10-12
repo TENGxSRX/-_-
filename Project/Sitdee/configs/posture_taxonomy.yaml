@@ -1,0 +1,48 @@
+# Versioned taxonomy for attended human-labelled collection.
+# A model prediction or geometry indicator must never write this label.
+schema_version: posture_taxonomy_v1
+labels:
+  TUP:
+    display_en: "Upright sitting"
+    display_th: "นั่งตัวตรง"
+    collection_enabled: true
+    notes: "Pilot V2 human-label class."
+  TLB:
+    display_en: "Lean backward"
+    display_th: "เอนตัวไปด้านหลัง"
+    collection_enabled: true
+    notes: "Pilot V2 human-label class."
+  TLF:
+    display_en: "Lean forward"
+    display_th: "เอนตัวไปด้านหน้า"
+    collection_enabled: false
+    notes: "Reserved until a future protocol explicitly enables it."
+  TLL:
+    display_en: "Lean left"
+    display_th: "เอนตัวไปด้านซ้าย"
+    collection_enabled: false
+    notes: "Reserved until a future protocol explicitly enables it."
+  TLR:
+    display_en: "Lean right"
+    display_th: "เอนตัวไปด้านขวา"
+    collection_enabled: false
+    notes: "Reserved until a future protocol explicitly enables it."
+  SITTING:
+    display_en: "Sitting"
+    display_th: "อยู่ในท่านั่ง"
+    collection_enabled: false
+    notes: "Activity state, not a V4 posture class."
+  STANDING:
+    display_en: "Standing"
+    display_th: "อยู่ในท่ายืน"
+    collection_enabled: false
+    notes: "Activity state, not a V4 posture class."
+  UNKNOWN:
+    display_en: "Unknown / uncertain"
+    display_th: "ไม่แน่ชัด"
+    collection_enabled: false
+    notes: "Use NO_LABEL / SKIP during pilot collection rather than forcing a label."
+
+# Empty by design.  Add a source mapping only after source documentation and
+# per-file label/media joins have been verified.
+source_mappings: {}

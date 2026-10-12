@@ -1,0 +1,13 @@
+# Local RGB V1 data-quality settings.
+# These are engineering/data-quality criteria, not clinical thresholds.
+minimum_duration_seconds: 20.0
+target_duration_seconds: 25.0
+maximum_duration_seconds: 30.0
+minimum_pose_detection_rate: 0.90
+minimum_core_acceptance_rate: 0.85
+sampling_fps: 2.0
+exclude_initial_seconds: 2.0
+minimum_participants: 6
+target_participants: 10
+minimum_independent_groups_per_class: 3
+core_visibility_threshold: 0.5

@@ -1,0 +1,10 @@
+{
+  "source_labels": [
+    "TLB",
+    "TUP"
+  ],
+  "display_labels": {
+    "TUP": "Upright",
+    "TLB": "Lean backward"
+  }
+}

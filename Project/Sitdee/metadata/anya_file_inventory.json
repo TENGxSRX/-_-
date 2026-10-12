@@ -1,0 +1,22 @@
+{
+  "source": "https://www.kaggle.com/datasets/chanankornjandaeng/anya-a-dataset-for-ergonomic-posture-analysis",
+  "dataset_ref": "chanankornjandaeng/anya-a-dataset-for-ergonomic-posture-analysis",
+  "version": 1,
+  "verified_utc": "2026-09-05",
+  "verification_type": "official public Kaggle file-list endpoint; remote metadata only",
+  "files": [
+    {"name": "ANN.csv", "total_bytes": 1991620993},
+    {"name": "Random_Forest.csv", "total_bytes": 1991620993},
+    {"name": "lgbm.csv", "total_bytes": 1991620993},
+    {"name": "xgb.csv", "total_bytes": 1991620993}
+  ],
+  "total_bytes": 7966483972,
+  "archive": {
+    "name": "anya-a-dataset-for-ergonomic-posture-analysis.zip",
+    "total_bytes": 3607095951,
+    "sha256": "33f513fa2fd0ae4addeace022aa0a07064c20f3da0ce126bdcf0ff6b0ca4a1f1"
+  },
+  "local_downloaded": true,
+  "local_total_csv_bytes": 7966483972,
+  "local_sha256_manifest": "metadata/anya_hashes.sha256"
+}

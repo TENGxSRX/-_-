@@ -1,0 +1,17 @@
+# Optional Acer Aspire 4741G preset.
+# This changes execution frequency/display settings only; it does not change
+# V4 feature semantics, model inputs, labels, or training artifacts.
+preset: LOW_SPEC
+capture_width: 640
+capture_height: 480
+process_every: 3
+record: false
+sound: false
+calibration_overlay: false
+max_log_records: 2000
+
+performance_notes:
+  - MediaPipe runs on every third captured frame.
+  - The preview still displays every captured frame.
+  - Skipped frames are marked inference_skipped=true and are not counted as inferred evidence.
+  - Temporal calculations use the original frame timestamps.

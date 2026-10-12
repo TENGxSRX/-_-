@@ -1,0 +1,20 @@
+{
+  "fixture_status": "TEST_FIXTURE",
+  "session_id": "fixture_sanitized_001",
+  "hardware_status": "TEST_FIXTURE_ONLY",
+  "software_status": "TEST_FIXTURE_ONLY",
+  "records": 12,
+  "total_session_duration_seconds": 12.0,
+  "valid_pose_percentage": 91.7,
+  "pose_detection_percentage": 100.0,
+  "core_landmark_acceptance_percentage": 91.7,
+  "input_quality_status": "TEST_FIXTURE",
+  "upright_percentage": 75.0,
+  "lean_backward_percentage": 25.0,
+  "forward_indicator_percentage": 0.0,
+  "left_indicator_percentage": 0.0,
+  "right_indicator_percentage": 0.0,
+  "warning_count": 0,
+  "average_fps": 10.0,
+  "interpretation": "Sanitized development fixture; not a measurement, label, or scientific result."
+}

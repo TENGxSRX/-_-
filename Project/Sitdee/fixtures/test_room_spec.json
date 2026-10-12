@@ -1,0 +1,37 @@
+{
+  "spec_status": "TEST_ROOM_ONLY",
+  "room": {
+    "width_m": 8.0,
+    "length_m": 6.0,
+    "ceiling_height_m": 2.8
+  },
+  "cameras": [
+    {
+      "id": "CAM_TEST_01",
+      "x_m": 1.0,
+      "y_m": 3.0,
+      "height_m": 2.2,
+      "direction_deg": 0.0,
+      "hfov_deg": 90.0,
+      "vfov_deg": 60.0,
+      "resolution": {"width_px": 1280, "height_px": 720}
+    },
+    {
+      "id": "CAM_TEST_02",
+      "x_m": 7.0,
+      "y_m": 3.0,
+      "height_m": 2.2,
+      "direction_deg": 180.0,
+      "hfov_deg": 90.0,
+      "vfov_deg": 60.0,
+      "resolution": {"width_px": 1280, "height_px": 720}
+    }
+  ],
+  "targets": [
+    {"id": "SEAT_TEST_01", "x_m": 3.0, "y_m": 2.0, "facing_deg": 0.0},
+    {"id": "SEAT_TEST_02", "x_m": 5.0, "y_m": 4.0, "facing_deg": 180.0}
+  ],
+  "obstacles": [
+    {"id": "PARTITION_TEST", "type": "partition", "x_m": 4.0, "y_m": 2.8, "width_m": 0.2, "length_m": 0.4}
+  ]
+}

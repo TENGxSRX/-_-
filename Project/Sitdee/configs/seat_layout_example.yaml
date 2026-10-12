@@ -1,0 +1,23 @@
+# TEST_ROOM_ONLY — example layout for development and synthetic tests.
+# Coordinates are normalized image coordinates: x increases rightward and
+# y increases downward; both values are in [0.0, 1.0], independent of pixels.
+camera_id: CAM01
+layout_status: TEST_ROOM_ONLY
+coordinate_convention: normalized_image_xy_x_right_y_down
+
+seats:
+  - id: SEAT_01
+    roi: [0.05, 0.20, 0.30, 0.90]
+    anchor: [0.175, 0.62]
+    expected_facing: camera
+    enabled: true
+  - id: SEAT_02
+    roi: [0.35, 0.20, 0.65, 0.90]
+    anchor: [0.50, 0.62]
+    expected_facing: camera
+    enabled: true
+  - id: SEAT_03
+    roi: [0.70, 0.20, 0.95, 0.90]
+    anchor: [0.825, 0.62]
+    expected_facing: camera
+    enabled: true

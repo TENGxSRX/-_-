@@ -1,0 +1,18 @@
+# Hikvision deployment template only.
+# No real room dimensions or seat coordinates are included here.
+# Fill roi/polygon only after the actual camera view and room layout are approved.
+
+schema_version: 1
+camera_id: CAM01
+camera_model: DS-2CD1047G2H-LIUF
+layout_status: WAITING_FOR_REAL_ROOM_LAYOUT
+coordinate_convention: normalized_image_xy_x_right_y_down
+seats: []
+
+# Example seat entry shape (intentionally commented; not a real coordinate):
+# - id: SEAT_01
+#   roi: []
+#   polygon: []
+#   anchor: []
+#   expected_facing: camera
+#   enabled: true

@@ -1,0 +1,175 @@
+{
+  "model_family": "rgb_native_v4_pilot",
+  "source_dataset": "DriveNet v6",
+  "source_url": "https://data.mendeley.com/datasets/v37nxdn2gh/6",
+  "license": "CC BY 4.0",
+  "source_files": [
+    {
+      "filename": "LB_1.mp4",
+      "path": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AnyaTrainModel\\office-posture-datasets\\datasets\\raw\\rgb_native\\drivenet_v6\\source_videos\\LB_1.mp4",
+      "source_label": "LB",
+      "mapped_project_label": "TLB",
+      "participant_id": "1",
+      "video_id": "LB_1",
+      "bytes": 152696410,
+      "sha256": "80f7218aa828bedc3f1fa1f605237a5aeb750794112ab3cfb2b0515f5ada668e",
+      "license": "CC BY 4.0",
+      "source_url": "https://data.mendeley.com/datasets/v37nxdn2gh/6"
+    },
+    {
+      "filename": "LB_2.mp4",
+      "path": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AnyaTrainModel\\office-posture-datasets\\datasets\\raw\\rgb_native\\drivenet_v6\\source_videos\\LB_2.mp4",
+      "source_label": "LB",
+      "mapped_project_label": "TLB",
+      "participant_id": "2",
+      "video_id": "LB_2",
+      "bytes": 77562475,
+      "sha256": "baa2dbb0c1d4dec761389ab4941114e27c61928ac8132c6eae0abcd84ce677ac",
+      "license": "CC BY 4.0",
+      "source_url": "https://data.mendeley.com/datasets/v37nxdn2gh/6"
+    },
+    {
+      "filename": "LB_3.mp4",
+      "path": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AnyaTrainModel\\office-posture-datasets\\datasets\\raw\\rgb_native\\drivenet_v6\\source_videos\\LB_3.mp4",
+      "source_label": "LB",
+      "mapped_project_label": "TLB",
+      "participant_id": "3",
+      "video_id": "LB_3",
+      "bytes": 156875573,
+      "sha256": "670099e4ab5595c72f32eb9e6350388da6d5b9dddeaccdbcc47c0b48b083892b",
+      "license": "CC BY 4.0",
+      "source_url": "https://data.mendeley.com/datasets/v37nxdn2gh/6"
+    },
+    {
+      "filename": "SS_1.mp4",
+      "path": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AnyaTrainModel\\office-posture-datasets\\datasets\\raw\\rgb_native\\drivenet_v6\\source_videos\\SS_1.mp4",
+      "source_label": "SS",
+      "mapped_project_label": "TUP",
+      "participant_id": "1",
+      "video_id": "SS_1",
+      "bytes": 153589862,
+      "sha256": "f4161e3bb9faf61831422e0d88c253f9746423a86be1deac8f997212a4426f79",
+      "license": "CC BY 4.0",
+      "source_url": "https://data.mendeley.com/datasets/v37nxdn2gh/6"
+    },
+    {
+      "filename": "SS_2.mp4",
+      "path": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AnyaTrainModel\\office-posture-datasets\\datasets\\raw\\rgb_native\\drivenet_v6\\source_videos\\SS_2.mp4",
+      "source_label": "SS",
+      "mapped_project_label": "TUP",
+      "participant_id": "2",
+      "video_id": "SS_2",
+      "bytes": 162121606,
+      "sha256": "f063f2e6b5a7bd8fb56376520835ff852d7b6ed6647e32fcddd48d4e73aa03d2",
+      "license": "CC BY 4.0",
+      "source_url": "https://data.mendeley.com/datasets/v37nxdn2gh/6"
+    },
+    {
+      "filename": "SS_3.mp4",
+      "path": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AnyaTrainModel\\office-posture-datasets\\datasets\\raw\\rgb_native\\drivenet_v6\\source_videos\\SS_3.mp4",
+      "source_label": "SS",
+      "mapped_project_label": "TUP",
+      "participant_id": "3",
+      "video_id": "SS_3",
+      "bytes": 204932316,
+      "sha256": "8bab893c4ad8c6d1546f04a6270e4e6aa74856640eb800b9c66e65d493725196",
+      "license": "CC BY 4.0",
+      "source_url": "https://data.mendeley.com/datasets/v37nxdn2gh/6"
+    }
+  ],
+  "sample_strategy": {
+    "frames_per_video": 300,
+    "method": "linspace over full video frame range"
+  },
+  "training_timestamp_utc": "2026-09-05T10:14:54.484624+00:00",
+  "host": "DESKTOP-ALH6CUB",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "model_name": "LogisticRegression",
+  "feature_family": "normalized_world",
+  "normalization_formula": "Divide each hip-centered core XYZ row by the L2 norm of the shoulder midpoint; this is a V4 feature-family transform, not a MultiPosture reconstruction.",
+  "feature_columns": [
+    "nose_x_world_hip_centered_scaled",
+    "nose_y_world_hip_centered_scaled",
+    "nose_z_world_hip_centered_scaled",
+    "left_shoulder_x_world_hip_centered_scaled",
+    "left_shoulder_y_world_hip_centered_scaled",
+    "left_shoulder_z_world_hip_centered_scaled",
+    "right_shoulder_x_world_hip_centered_scaled",
+    "right_shoulder_y_world_hip_centered_scaled",
+    "right_shoulder_z_world_hip_centered_scaled",
+    "left_hip_x_world_hip_centered_scaled",
+    "left_hip_y_world_hip_centered_scaled",
+    "left_hip_z_world_hip_centered_scaled",
+    "right_hip_x_world_hip_centered_scaled",
+    "right_hip_y_world_hip_centered_scaled",
+    "right_hip_z_world_hip_centered_scaled"
+  ],
+  "labels": [
+    "TLB",
+    "TUP"
+  ],
+  "grouping_strategy": "participant_id from official video filename suffix; participants 1/2 train, 3 holdout",
+  "split": {
+    "train_participants": [
+      "1",
+      "2"
+    ],
+    "holdout_participants": [
+      "3"
+    ]
+  },
+  "cv": "2-fold GroupKFold on training participants",
+  "cv_macro_f1_mean": 1.0,
+  "cv_macro_f1_std": 0.0,
+  "holdout_metrics": {
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "per_class": {
+      "TLB": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 300
+      },
+      "TUP": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 300
+      }
+    },
+    "confusion_matrix": [
+      [
+        300,
+        0
+      ],
+      [
+        0,
+        300
+      ]
+    ],
+    "labels": [
+      "TLB",
+      "TUP"
+    ],
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "brier_score": 1.5217909565779867e-05,
+    "sensitivity": 1.0,
+    "specificity": 1.0,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0
+  },
+  "limitations": [
+    "Pilot supports only TUP and TLB; MB and RP were not mapped or trained.",
+    "Three participants provide only one held-out participant.",
+    "DriveNet is a controlled driving posture domain, not an office-camera validation set.",
+    "The exported model is not a six-class MultiPosture replacement.",
+    "This model does not prove ergonomic medical safety or diagnosis."
+  ],
+  "v4_status": "PILOT_TRAINED_TWO_CLASS_ONLY"
+}

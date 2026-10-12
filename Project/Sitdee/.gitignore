@@ -1,0 +1,128 @@
+# Raw datasets and generated downloads
+datasets/raw/
+datasets/processed/
+datasets/incoming/
+datasets/derived/
+validation_data/
+*.csv
+*.csv.gz
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.rar
+
+# Local participant recordings are private raw media and must never be committed.
+# The broad datasets/raw/ rule above already excludes them; these explicit rules
+# document the policy for future repository layouts.
+datasets/raw/local_rgb_v1/**/*.mp4
+datasets/raw/local_rgb_v1/**/*.avi
+datasets/raw/local_rgb_v1/**/*.mov
+datasets/raw/local_rgb_v1/**/*.mkv
+datasets/raw/local_rgb_v1/**/*.webm
+
+# Python environments, caches, and build output
+.venv/
+.venv_yolo/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest-runtime*/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+test-run-tmp/
+.cache/
+
+# Models and experiment artifacts
+*.pt
+*.pth
+*.onnx
+*.h5
+*.hdf5
+*.pkl
+*.joblib
+*.safetensors
+*.task
+models/
+checkpoints/
+
+# Large/generated runtime outputs. Frozen V4 is explicitly allow-listed below.
+outputs/live/logs/
+outputs/live/session_reports/
+outputs/live/videos/
+outputs/rtsp_ai_lab/
+outputs/rtsp_ai_benchmark/
+outputs/rtsp_ai_display_benchmark*/
+outputs/cctv_multiperson_benchmark/
+outputs/shadow_sessions/
+outputs/validation/
+outputs/benchmarks/
+outputs/metrics/
+outputs/models/multiposture_v1/
+outputs/models/multiposture_upperbody_v2/
+outputs/models/rgb_native_v5/
+data/controlled_rgb_v5/
+data/behavior_partial_pose_v1/
+data/controlled_cctv_v2/
+evidence/
+
+# Ignore generated output by default. Keep only the compact frozen V4 runtime
+# artifact allow-listed below; everything else is reproducible runtime output,
+# private telemetry, or experiment material.
+outputs/*
+!outputs/models/
+outputs/models/*
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+kaggle.json
+**/.kaggle/kaggle.json
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Keep the small frozen V4 runtime artifact versionable for the Acer.
+# These rules override the generic model/joblib ignores above.
+!outputs/
+!outputs/models/
+!outputs/models/rgb_native_v4/
+!outputs/models/rgb_native_v4/*.json
+!outputs/models/rgb_native_v4/*.joblib
+
+# Separate 4 KB experimental upper-body RGB candidate; V4 remains frozen.
+!outputs/models/upper_body_posture_v1_drivenet_exp/
+!outputs/models/upper_body_posture_v1_drivenet_exp/candidate.joblib
+!outputs/models/upper_body_posture_v1_drivenet_exp/metrics.json
+
+# Versioned experimental hip-optional candidate and reproducible benchmark.
+!outputs/models/upper_body_posture_v2/
+!outputs/models/upper_body_posture_v2/candidate.joblib
+!outputs/models/upper_body_posture_v2/metrics.json
+
+# Unlabeled CCTV runtime observations/indices stay private and out of git.
+outputs/learning_pools/
+
+# Handoff packaging (2026-09-30): extra safety nets
+.venv_*/
+logs/
+tmp/
+temp/
+runtime_logs/
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+*.pem
+*.key
+*.p12
+id_rsa*
+credentials*.json

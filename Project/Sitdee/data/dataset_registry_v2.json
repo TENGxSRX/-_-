@@ -1,0 +1,208 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-09-10",
+  "scope": "Round-2 public-dataset hunt and scientific compatibility audit. Values marked local_observation are measured from local files; values marked source_report are not treated as local measurements.",
+  "selection_rules": {
+    "no_external_training_this_round": true,
+    "required_for_future_supervised_training": [
+      "verified source label joined to each sample",
+      "per-subject or defensible recording/session grouping",
+      "license or explicit research-use permission",
+      "representation compatibility audit before feature fusion"
+    ],
+    "forbidden_shortcuts": [
+      "do not infer directional labels from file names or an activity label",
+      "do not convert usual posture into an incorrect-posture medical label",
+      "do not treat an archive title as proof of its contents",
+      "do not use external labels to tune an adapter"
+    ]
+  },
+  "entries": [
+    {
+      "id": "multiposture_zenodo",
+      "status": "EXISTING_VERIFIED_PRIMARY",
+      "official_source_url": "https://zenodo.org/records/14230872",
+      "license": { "status": "VERIFIED", "value": "CC BY 4.0" },
+      "local_observation": { "raw_rgb": false, "rows": 4794, "participant_count": 13, "participant_id_available": true, "labels": ["TUP", "TLF", "TLB", "TLL", "TLR"] },
+      "source_report": { "representation": "MediaPipe-derived 3D skeletal coordinates with expert-validated sitting labels" },
+      "mapping": { "TUP": "EXACT", "TLF": "EXACT", "TLB": "EXACT", "TLL": "EXACT", "TLR": "EXACT", "correct_incorrect": "NO_ERGONOMIC_GROUND_TRUTH", "sit_stand": "SITTING_ONLY" },
+      "grouping": "VERIFIED_SUBJECT_ID",
+      "compatibility": "LANDMARK_SCHEMA_ONLY; real-RGB adapter remains separately unvalidated",
+      "training_eligibility": "EXISTING_FROZEN_MODEL_SOURCE_ONLY"
+    },
+    {
+      "id": "drivenet_v6",
+      "status": "EXISTING_PARTIAL_RGB_PILOT",
+      "official_source_url": "https://data.mendeley.com/datasets/v37nxdn2gh/6",
+      "license": { "status": "VERIFIED", "value": "CC BY 4.0" },
+      "local_observation": { "raw_rgb": true, "downloaded_clips": 3, "downloaded_bytes": 387761277, "labels_verified_for_mapping": ["SS->TUP", "LB->TLB"], "other_downloaded_class": "MB: UNLABELED" },
+      "source_report": { "context": "driver posture, not office desk posture" },
+      "mapping": { "TUP": "PARTIAL_SS_ONLY", "TLB": "PARTIAL_LB_ONLY", "TLF": "NO", "TLL": "NO", "TLR": "NO", "correct_incorrect": "NO" },
+      "grouping": "CLIP_AND_SOURCE_IDENTIFIER; participant metadata limited for current local subset",
+      "compatibility": "RGB_POSE_SMOKE_TEST_ONLY; not a five-class office corpus",
+      "training_eligibility": "FROZEN_V4_PILOT_ONLY"
+    },
+    {
+      "id": "mmd_msd",
+      "status": "PUBLIC_SUBSET_AND_FULL_BY_REQUEST",
+      "official_source_url": "http://isr.tu-varna.bg/ergo/index.php/resursi",
+      "publication_url": "https://www.mdpi.com/1999-4893/17/5/187",
+      "license": { "status": "UNSTATED_ON_OFFICIAL_SOURCE", "value": null },
+      "source_report": { "participants": "100 in full corpus; a 5-participant subset is linked publicly", "modalities": ["video recorder", "camera", "wrist PPG/EDA/temperature", "accelerometer"], "context": "computer work", "full_access": "upon request" },
+      "local_observation": { "raw_rgb": "only an earlier 35-image audit subset exists; no new corpus downloaded in this round" },
+      "mapping": { "TUP": "NOT_PROVEN_PER_FILE", "TLF": "NOT_PROVEN_PER_FILE", "TLB": "NOT_PROVEN_PER_FILE", "TLL": "NOT_PROVEN_PER_FILE", "TLR": "NOT_PROVEN_PER_FILE", "correct_incorrect": "NOT_PROVEN_PER_FILE", "sit_stand": "NOT_PROVEN_PER_FILE" },
+      "grouping": "FULL/SUBSET FILE LAYOUT NOT INSPECTED",
+      "compatibility": "PROMISING_OFFICE_RGB_SOURCE_BUT_LABEL_AND_LICENSE_AUDIT_REQUIRED",
+      "training_eligibility": "BLOCKED_LICENSE_AND_LABEL_JOIN"
+    },
+    {
+      "id": "mcd_msd",
+      "status": "PUBLIC_LINK_LICENSE_UNCLEAR",
+      "official_source_url": "http://isr.tu-varna.bg/ergo/index.php/resursi",
+      "publication_url": "https://www.mdpi.com/2073-431X/11/7/116",
+      "license": { "status": "UNSTATED_ON_OFFICIAL_SOURCE", "value": null },
+      "source_report": { "participants": 10, "modalities": ["motion capture", "images", "videos", "models"], "context": "computer keyboard work", "protocol_labels": ["SK: usual posture with standard keyboard", "EK: usual posture with ergonomic keyboard", "EKC: instructed correct posture with ergonomic keyboard and pillow"] },
+      "local_observation": { "downloaded": false, "reason": "license terms and file-level label/media join were not exposed by the source page" },
+      "mapping": { "correct_incorrect": "EKC_CAN_BE_CALLED_INSTRUCTED_CORRECT_ONLY_AFTER_FILE_JOIN; SK/EK_ARE_NOT_AUTOMATICALLY_INCORRECT", "TUP": "NO", "TLF": "NO", "TLB": "NO", "TLL": "NO", "TLR": "NO", "sit_stand": "SITTING_PROTOCOL" },
+      "grouping": "SOURCE_REPORTS_10_PEOPLE_BUT_ID_LAYOUT_UNVERIFIED",
+      "compatibility": "HIGHEST_SEMANTIC_PROMISE_FOR_OFFICE_CORRECT_VS_USUAL; requires permission and inspection",
+      "training_eligibility": "BLOCKED_LICENSE_AND_LABEL_JOIN"
+    },
+    {
+      "id": "moped25",
+      "status": "OFFICIAL_SAMPLE_DOWNLOADED_FULL_RGB_ENDPOINT_UNRESOLVED",
+      "official_source_url": "https://github.com/human-systems-ise-ncsu/MOPED25",
+      "publication_url": "https://doi.org/10.1016/j.jbiomech.2020.110086",
+      "license": { "status": "VERIFIED_FOR_GITHUB_RELEASE", "value": "Apache-2.0", "caveat": "does not prove a separate full-video host has identical terms" },
+      "source_report": { "published_participants": 11, "tasks": 25, "motions": 790, "modalities": ["synchronized monocular video", "37-marker kinematics"], "video_rate_hz": 30, "kinematics_rate_hz": 60 },
+      "local_observation": { "archive": "data/external/moped25/official_github_release/MOPED25-master.zip", "archive_bytes": 3141361, "archive_sha256": "c3a712e0305dd3077020110867ebe905ee03f4f4c4ccba76f76254f6884ee1bf", "archive_entries": 20, "marker_mat_files": 4, "raw_human_rgb_videos": 0, "sample_subject": "sub07" },
+      "mapping": { "correct_incorrect": "NO_DIRECT_LABEL", "TUP": "NO_DIRECT_LABEL", "TLF": "NO_DIRECT_LABEL", "TLB": "NO_DIRECT_LABEL", "TLL": "NO_DIRECT_LABEL", "TLR": "NO_DIRECT_LABEL", "sit_stand": "TASK_DEPENDENT_NOT_A_CLASS" },
+      "grouping": "FULL_DATA_SOURCE_REPORTS_SUBJECTS; local sample has sub07 only",
+      "compatibility": "BIOMECHANICS_AND_POSE_RECONSTRUCTION_REFERENCE; not direct posture-class supervision",
+      "training_eligibility": "AUDIT_ONLY"
+    },
+    {
+      "id": "andydataset_lab_oneperson",
+      "status": "OPEN_RECORD_LICENSE_UNCLEAR_AND_OVER_BUDGET",
+      "official_source_url": "https://zenodo.org/records/3254403",
+      "license": { "status": "UNSTATED_ON_ZENODO_RECORD", "value": null },
+      "source_report": { "participants": 13, "modalities": ["motion capture", "glove force", "CSV", "two camera views", "avatar replay videos"], "labels": "EAWS action and posture annotations from three annotators", "video_note": "record description calls supplied videos avatar replays rather than raw human camera video", "download_size": "92.5 GB listed files" },
+      "local_observation": { "downloaded": false, "reason": "no stated rights field and full payload exceeds the 30 GB download budget" },
+      "mapping": { "correct_incorrect": "EAWS_RELATED_BUT_NOT_PROJECT_BINARY", "TUP": "NO", "TLF": "NO", "TLB": "NO", "TLL": "NO", "TLR": "NO", "sit_stand": "NOT_PRIMARY_LABEL" },
+      "grouping": "PARTICIPANT_LEVEL_REPORTED; file-level layout uninspected",
+      "compatibility": "ERGONOMIC_TAXONOMY_REFERENCE_NOT_REAL_RGB_OFFICE_TRANSFER_SOURCE",
+      "training_eligibility": "BLOCKED_LICENSE_BUDGET_AND_SEMANTIC_GAP"
+    },
+    {
+      "id": "msr_dailyactivity3d",
+      "status": "OFFICIAL_PAGE_PUBLIC_BUT_DOWNLOADED_ARTIFACT_MISMATCH",
+      "official_source_url": "https://sites.google.com/view/wanqingli/data-sets/msr-dailyactivity3d",
+      "supporting_download_url": "https://doi.org/10.1371/journal.pone.0114147.s003",
+      "license": { "status": "SOURCE_AMBIGUOUS", "value": "PLOS article declares underlying data unrestricted; original creator page does not state a dataset license" },
+      "source_report": { "participants": 10, "activities": 16, "repetitions": 2, "source_modalities": ["RGB AVI", "depth BIN", "20-joint skeleton TXT"], "protocol": "each activity reported once seated and once standing" },
+      "local_observation": { "archive": "data/external/msr_daily_activity3d/official_plos_supporting_data/msr_daily_activity3d_dataset_s3.rar", "archive_bytes": 12439842, "archive_sha256": "5394a12f7ab4a5cc15d091ba32ed5317ae91b5705451db986d3d23ff9bdba260", "archive_entries": 321, "actual_top_directory": "MSRAction3DSkeletonReal3D", "actual_files": "320 TXT skeleton files", "raw_rgb_videos": 0, "archive_title_content_match": false },
+      "mapping": { "sit_stand": "PROTOCOL_LEVEL_ONLY_NOT_JOINED_TO_LOCAL_ARTIFACT", "correct_incorrect": "NO", "TUP": "NO", "TLF": "NO", "TLB": "NO", "TLL": "NO", "TLR": "NO" },
+      "grouping": "FILENAME_ENCODES_aXX_sXX_eXX; class-name manifest missing from downloaded artifact",
+      "compatibility": "SIT_STAND_RESEARCH_REFERENCE_ONLY; not RGB or office-ergonomic training data locally",
+      "training_eligibility": "DO_NOT_TRAIN_ARTIFACT_MISMATCH"
+    },
+    {
+      "id": "utd_mhad",
+      "status": "PUBLIC_ACTION_BENCHMARK_LICENSE_UNVERIFIED",
+      "official_source_url": "https://www.utdallas.edu/~kehtar/UTD-MHAD.html",
+      "publication_url": "https://doi.org/10.1109/ICIP.2015.7350781",
+      "license": { "status": "UNVERIFIED", "value": null },
+      "source_report": { "size": "approximately 2 GB", "modalities": ["RGB", "depth", "skeleton", "inertial"], "actions_of_interest": ["sit-to-stand", "stand-to-sit"] },
+      "local_observation": { "downloaded": false },
+      "mapping": { "sit_stand": "TRANSITION_ACTION_ONLY", "correct_incorrect": "NO", "TUP": "NO", "TLF": "NO", "TLB": "NO", "TLL": "NO", "TLR": "NO" },
+      "grouping": "SUBJECT_IDS_REPORTED_IN_PROTOCOL_BUT_LOCAL_LAYOUT_UNINSPECTED",
+      "compatibility": "POSSIBLE_ACTIVITY_TRANSITION_SMOKE_TEST; not seated office posture training",
+      "training_eligibility": "NOT_A_TARGET_LABEL_SET"
+    },
+    {
+      "id": "ussp_msbn_spose",
+      "status": "PAPER_REPORTED_NO_PUBLIC_DATA_RELEASE_VERIFIED",
+      "publication_url": "https://doi.org/10.3390/electronics14193889",
+      "license": { "status": "NO_DATA_LICENSE_VERIFIED", "value": null },
+      "source_report": { "labels": ["Upright", "HeadDown", "HandOnChin", "Standing"], "capture": "six camera angles and two device types" },
+      "local_observation": { "downloaded": false },
+      "mapping": { "TUP": "APPROXIMATE_UPRIGHT_ONLY", "TLF": "HEAD_DOWN_NOT_EQUIVALENT_TO_TRUNK_FORWARD", "TLB": "NO", "TLL": "NO", "TLR": "NO", "correct_incorrect": "NO", "sit_stand": "DIRECT_BUT_RELEASE_UNVERIFIED" },
+      "grouping": "UNKNOWN",
+      "compatibility": "PROMISING_CONCEPTUALLY_BUT_UNAVAILABLE_FOR_CURRENT_AUDIT",
+      "training_eligibility": "BLOCKED_NO_RELEASE"
+    },
+    {
+      "id": "sitting_behaviors_healthy_population",
+      "status": "SENSOR_DATA_ONLY_FOR_PUBLIC_RELEASE",
+      "official_source_url": "https://doi.org/10.34894/UBDHLZ",
+      "license": { "status": "DATA_RECORD_LICENSE_REQUIRES_FILE_LEVEL_CHECK", "value": null },
+      "source_report": { "participants": 38, "context": "five office-working days", "modalities_public": ["pressure mat", "bioradar", "CSV labels"], "video_note": "Kinect video was used for annotation but RGB/video is not listed as openly released" },
+      "local_observation": { "downloaded": false },
+      "mapping": { "TUP": "UNVERIFIED", "TLF": "UNVERIFIED", "TLB": "UNVERIFIED", "TLL": "UNVERIFIED", "TLR": "UNVERIFIED", "correct_incorrect": "NO", "sit_stand": "SITTING_DATA" },
+      "grouping": "PARTICIPANT_AND_DAY_STRUCTURE_REPORTED",
+      "compatibility": "USEFUL_LABEL_TAXONOMY_REFERENCE; no RGB adapter or V5 training value",
+      "training_eligibility": "NO_RGB"
+    },
+    {
+      "id": "sitpose",
+      "status": "EXISTING_PARTIAL_NON_RGB",
+      "official_source_url": "https://github.com/TaylorDurden1114/SitPose",
+      "publication_url": "https://arxiv.org/abs/2412.12216",
+      "license": { "status": "UNSTATED_ON_REPOSITORY", "value": null },
+      "local_observation": { "rows": 5746, "labels": ["forward", "healthy", "lay", "left", "right", "stand", "wrong"], "raw_rgb": false, "group_ids": false },
+      "source_report": { "participants": 36, "points": 33409, "sensor": "Kinect depth" },
+      "mapping": { "TUP": "HEALTHY_NOT_PROVEN_EQUIVALENT", "TLF": "APPROXIMATE_FORWARD", "TLB": "LAY_NOT_EQUIVALENT", "TLL": "APPROXIMATE_LEFT", "TLR": "APPROXIMATE_RIGHT", "correct_incorrect": "WRONG_SEMANTICS_REQUIRE_SOURCE_CHECK", "sit_stand": "DIRECT_STAND_LABEL" },
+      "grouping": "MISSING_IN_LOCAL_CSV",
+      "compatibility": "NO_BLIND_FEATURE_FUSION",
+      "training_eligibility": "BLOCKED_PARTIAL_AND_GROUPING"
+    },
+    {
+      "id": "sitstraightnet",
+      "status": "EXISTING_UNLABELED_RGB_SNAPSHOT",
+      "official_source_url": "https://github.com/realratchet/SitStraightNet",
+      "publication_url": "https://doi.org/10.7717/peerj-cs.442",
+      "license": { "status": "VERIFIED_FOR_REPOSITORY", "value": "MIT" },
+      "local_observation": { "jpeg_count": 756, "raw_rgb": true, "per_file_label_join": false, "group_ids": false },
+      "source_report": { "participants": 11, "video_sequences": 66, "labels": ["sitting straight", "lightly hunched", "hunched over", "extremely hunched", "partially lying", "lying down"] },
+      "mapping": { "TUP": "SITTING_STRAIGHT_SOURCE_LEVEL_ONLY", "TLF": "HUNCHED_CLASSES_SOURCE_LEVEL_ONLY", "TLB": "LYING_CLASSES_SOURCE_LEVEL_ONLY", "TLL": "NO", "TLR": "NO", "correct_incorrect": "NOT_BINARY_GROUND_TRUTH", "sit_stand": "NO" },
+      "grouping": "MISSING_IN_LOCAL_SNAPSHOT",
+      "compatibility": "POSE_EXTRACTION_SMOKE_TEST_ONLY",
+      "training_eligibility": "NO_LABEL_JOIN"
+    },
+    {
+      "id": "mvsp_lgcspnet",
+      "status": "MANUAL_BAIDU_ACCESS_REQUIRED",
+      "official_source_url": "https://github.com/LKW123800/multi-view-sitting-posture-dataset",
+      "license": { "status": "UNSTATED", "value": null },
+      "local_observation": { "archive_present": false },
+      "mapping": { "TUP": "UNKNOWN", "TLF": "UNKNOWN", "TLB": "UNKNOWN", "TLL": "UNKNOWN", "TLR": "UNKNOWN", "correct_incorrect": "UNKNOWN", "sit_stand": "UNKNOWN" },
+      "grouping": "UNKNOWN",
+      "compatibility": "CANNOT_BE_ASSESSED_BEFORE_ARCHIVE_AUDIT",
+      "training_eligibility": "BLOCKED_MANUAL_ACCESS"
+    },
+    {
+      "id": "toyota_smarthome",
+      "status": "GATED_RESEARCH_DATASET",
+      "official_source_url": "https://project.inria.fr/toyotasmarthome/",
+      "license": { "status": "RESEARCH_REQUEST_REQUIRED", "value": null },
+      "source_report": { "participants": 18, "modalities": ["RGB", "depth", "skeleton"], "clips": 16115, "context": "daily activities" },
+      "local_observation": { "downloaded": false },
+      "mapping": { "sit_stand": "ACTIVITY_DEPENDENT", "correct_incorrect": "NO", "TUP": "NO", "TLF": "NO", "TLB": "NO", "TLL": "NO", "TLR": "NO" },
+      "grouping": "PARTICIPANT_METADATA_REPORTED_BUT_ACCESS_GATED",
+      "compatibility": "GENERAL_RGB_POSE_RESEARCH_ONLY",
+      "training_eligibility": "BLOCKED_ACCESS_AND_SEMANTIC_GAP"
+    },
+    {
+      "id": "roboflow_sitting_posture_keypoints_v2",
+      "status": "PUBLIC_KEYPOINT_IMAGES_PROVENANCE_AND_GROUPING_INSUFFICIENT",
+      "official_source_url": "https://universe.roboflow.com/ikornproject/sitting-posture-rofqf/dataset/2",
+      "license": { "status": "PAGE_SEARCH_METADATA_SAYS_CC_BY_4_0_BUT_DATA_CARD_NEEDS_DOWNLOAD_TIME_CONFIRMATION", "value": "UNCONFIRMED" },
+      "source_report": { "images": 655, "task": "keypoint detection", "preprocessing": "640x640 stretch" },
+      "local_observation": { "downloaded": false },
+      "mapping": { "sit_stand": "NO_SOURCE_POSTURE_CLASS", "correct_incorrect": "NO", "TUP": "NO", "TLF": "NO", "TLB": "NO", "TLL": "NO", "TLR": "NO" },
+      "grouping": "NOT_REPORTED",
+      "compatibility": "POSSIBLE_POSE_SMOKE_AUGMENT_ONLY; no class semantics",
+      "training_eligibility": "NO_POSTURE_LABELS_OR_GROUPS"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+schema: sitdee_roboflow_pose_v1
+project_type: keypoint_detection
+class_name: person
+keypoints:
+  - nose
+  - left_shoulder
+  - right_shoulder
+  - left_hip
+  - right_hip
+minimum_keypoint_confidence: 0.35
+coordinate_domain: normalized_image_2d
+compatibility_warning: DO_NOT_FEED_TO_MEDIAPIPE_WORLD_COORDINATE_MODELS
+

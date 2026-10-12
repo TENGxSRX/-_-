@@ -1,0 +1,17 @@
+# Future seat-aware configuration schema only.
+# Empty polygons are intentional until the real room/camera view is measured.
+
+schema_version: 1
+cameras:
+  - camera_id: CAM01
+    seats:
+      - seat_id: SEAT_01
+        roi_polygon: []
+        facing_deg: null
+      - seat_id: SEAT_02
+        roi_polygon: []
+        facing_deg: null
+
+# Do not put teacher names or biometric identifiers here.
+# roi_polygon uses image pixels after the camera view is frozen, for example:
+# [[x1, y1], [x2, y2], [x3, y3], [x4, y4]]

@@ -1,0 +1,776 @@
+{
+  "schema": "upper_body_posture_v1",
+  "status": "EXPERIMENTAL_SOURCE_DOMAIN_CANDIDATE",
+  "source_audit": {
+    "rows": 1800,
+    "participants": [
+      "1",
+      "2",
+      "3"
+    ],
+    "upper_labels": {
+      "TLB": 900,
+      "TUP": 900
+    },
+    "provenance": "Verified source protocol SS/TUP and LB/TLB compatible mappings; not office ergonomic GT",
+    "manifest_sha256": "b89b3542e105b0c28b1362b6a205b604175b8e48b39a9300905e7372128aff6f"
+  },
+  "dataset": "drivenet",
+  "source_sha256": "3e974daf98cae4450b1f1f48737ad0d774fda4bcb087d03331e4ea0bbdf46d64",
+  "ground_truth": "HUMAN_GROUND_TRUTH: source-verified protocol labels; compatibility limits apply",
+  "features": [
+    "trunk_lateral_rad",
+    "trunk_depth_rad",
+    "shoulder_tilt_rad",
+    "shoulder_yaw_cos",
+    "shoulder_yaw_sin",
+    "shoulder_width_torso",
+    "hip_width_torso",
+    "side_length_asymmetry"
+  ],
+  "landmarks": [
+    "left_shoulder",
+    "right_shoulder",
+    "left_hip",
+    "right_hip"
+  ],
+  "subtypes": {
+    "TLB": "BACKWARD_OR_RECLINED",
+    "TUP": "UPRIGHT"
+  },
+  "split": {
+    "development_subjects": [
+      "1",
+      "2"
+    ],
+    "holdout_subjects": [
+      "3"
+    ],
+    "development_samples": 1200,
+    "holdout_samples": 600,
+    "method": "2-fold GroupKFold on development; final fixed holdout; no frame-random split"
+  },
+  "development_class_counts": {
+    "TLB": 600,
+    "TUP": 600
+  },
+  "holdout_class_counts": {
+    "TLB": 300,
+    "TUP": 300
+  },
+  "candidates": {
+    "LogisticRegression": {
+      "grouped_oof": {
+        "samples": 1200,
+        "macro_f1": 0.9908325630139755,
+        "per_class": {
+          "TLB": {
+            "precision": 1.0,
+            "recall": 0.9816666666666667,
+            "f1-score": 0.990748528174937,
+            "support": 600.0
+          },
+          "TUP": {
+            "precision": 0.9819967266775778,
+            "recall": 1.0,
+            "f1-score": 0.990916597853014,
+            "support": 600.0
+          },
+          "accuracy": 0.9908333333333333,
+          "macro avg": {
+            "precision": 0.9909983633387889,
+            "recall": 0.9908333333333333,
+            "f1-score": 0.9908325630139755,
+            "support": 1200.0
+          },
+          "weighted avg": {
+            "precision": 0.990998363338789,
+            "recall": 0.9908333333333333,
+            "f1-score": 0.9908325630139755,
+            "support": 1200.0
+          }
+        },
+        "confusion_labels": [
+          "TLB",
+          "TUP"
+        ],
+        "confusion_matrix": [
+          [
+            589,
+            11
+          ],
+          [
+            0,
+            600
+          ]
+        ],
+        "binary": {
+          "correct_recall": 1.0,
+          "incorrect_recall": 0.9816666666666667,
+          "balanced_accuracy": 0.9908333333333333
+        },
+        "participants": {
+          "1": {
+            "samples": 600,
+            "macro_f1": 1.0,
+            "per_class": {
+              "TLB": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 300.0
+              },
+              "TUP": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 300.0
+              },
+              "accuracy": 1.0,
+              "macro avg": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 600.0
+              },
+              "weighted avg": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 600.0
+              }
+            },
+            "confusion_labels": [
+              "TLB",
+              "TUP"
+            ],
+            "confusion_matrix": [
+              [
+                300,
+                0
+              ],
+              [
+                0,
+                300
+              ]
+            ],
+            "binary": {
+              "correct_recall": 1.0,
+              "incorrect_recall": 1.0,
+              "balanced_accuracy": 1.0
+            }
+          },
+          "2": {
+            "samples": 600,
+            "macro_f1": 0.9816605025578042,
+            "per_class": {
+              "TLB": {
+                "precision": 1.0,
+                "recall": 0.9633333333333334,
+                "f1-score": 0.9813242784380306,
+                "support": 300.0
+              },
+              "TUP": {
+                "precision": 0.9646302250803859,
+                "recall": 1.0,
+                "f1-score": 0.9819967266775778,
+                "support": 300.0
+              },
+              "accuracy": 0.9816666666666667,
+              "macro avg": {
+                "precision": 0.982315112540193,
+                "recall": 0.9816666666666667,
+                "f1-score": 0.9816605025578042,
+                "support": 600.0
+              },
+              "weighted avg": {
+                "precision": 0.9823151125401929,
+                "recall": 0.9816666666666667,
+                "f1-score": 0.9816605025578042,
+                "support": 600.0
+              }
+            },
+            "confusion_labels": [
+              "TLB",
+              "TUP"
+            ],
+            "confusion_matrix": [
+              [
+                289,
+                11
+              ],
+              [
+                0,
+                300
+              ]
+            ],
+            "binary": {
+              "correct_recall": 1.0,
+              "incorrect_recall": 0.9633333333333334,
+              "balanced_accuracy": 0.9816666666666667
+            }
+          }
+        }
+      },
+      "fold_macro_f1": [
+        0.9816605025578042,
+        1.0
+      ],
+      "fold_std": 0.009169748721097881,
+      "fit_seconds": 0.08494590001646429
+    },
+    "RBF_SVM": {
+      "grouped_oof": {
+        "samples": 1200,
+        "macro_f1": 0.9749843652282677,
+        "per_class": {
+          "TLB": {
+            "precision": 1.0,
+            "recall": 0.95,
+            "f1-score": 0.9743589743589743,
+            "support": 600.0
+          },
+          "TUP": {
+            "precision": 0.9523809523809523,
+            "recall": 1.0,
+            "f1-score": 0.975609756097561,
+            "support": 600.0
+          },
+          "accuracy": 0.975,
+          "macro avg": {
+            "precision": 0.9761904761904762,
+            "recall": 0.975,
+            "f1-score": 0.9749843652282677,
+            "support": 1200.0
+          },
+          "weighted avg": {
+            "precision": 0.9761904761904763,
+            "recall": 0.975,
+            "f1-score": 0.9749843652282677,
+            "support": 1200.0
+          }
+        },
+        "confusion_labels": [
+          "TLB",
+          "TUP"
+        ],
+        "confusion_matrix": [
+          [
+            570,
+            30
+          ],
+          [
+            0,
+            600
+          ]
+        ],
+        "binary": {
+          "correct_recall": 1.0,
+          "incorrect_recall": 0.95,
+          "balanced_accuracy": 0.975
+        },
+        "participants": {
+          "1": {
+            "samples": 600,
+            "macro_f1": 0.9749843652282677,
+            "per_class": {
+              "TLB": {
+                "precision": 1.0,
+                "recall": 0.95,
+                "f1-score": 0.9743589743589743,
+                "support": 300.0
+              },
+              "TUP": {
+                "precision": 0.9523809523809523,
+                "recall": 1.0,
+                "f1-score": 0.975609756097561,
+                "support": 300.0
+              },
+              "accuracy": 0.975,
+              "macro avg": {
+                "precision": 0.9761904761904762,
+                "recall": 0.975,
+                "f1-score": 0.9749843652282677,
+                "support": 600.0
+              },
+              "weighted avg": {
+                "precision": 0.9761904761904763,
+                "recall": 0.975,
+                "f1-score": 0.9749843652282677,
+                "support": 600.0
+              }
+            },
+            "confusion_labels": [
+              "TLB",
+              "TUP"
+            ],
+            "confusion_matrix": [
+              [
+                285,
+                15
+              ],
+              [
+                0,
+                300
+              ]
+            ],
+            "binary": {
+              "correct_recall": 1.0,
+              "incorrect_recall": 0.95,
+              "balanced_accuracy": 0.975
+            }
+          },
+          "2": {
+            "samples": 600,
+            "macro_f1": 0.9749843652282677,
+            "per_class": {
+              "TLB": {
+                "precision": 1.0,
+                "recall": 0.95,
+                "f1-score": 0.9743589743589743,
+                "support": 300.0
+              },
+              "TUP": {
+                "precision": 0.9523809523809523,
+                "recall": 1.0,
+                "f1-score": 0.975609756097561,
+                "support": 300.0
+              },
+              "accuracy": 0.975,
+              "macro avg": {
+                "precision": 0.9761904761904762,
+                "recall": 0.975,
+                "f1-score": 0.9749843652282677,
+                "support": 600.0
+              },
+              "weighted avg": {
+                "precision": 0.9761904761904763,
+                "recall": 0.975,
+                "f1-score": 0.9749843652282677,
+                "support": 600.0
+              }
+            },
+            "confusion_labels": [
+              "TLB",
+              "TUP"
+            ],
+            "confusion_matrix": [
+              [
+                285,
+                15
+              ],
+              [
+                0,
+                300
+              ]
+            ],
+            "binary": {
+              "correct_recall": 1.0,
+              "incorrect_recall": 0.95,
+              "balanced_accuracy": 0.975
+            }
+          }
+        }
+      },
+      "fold_macro_f1": [
+        0.9749843652282677,
+        0.9749843652282677
+      ],
+      "fold_std": 0.0,
+      "fit_seconds": 0.07138909999048337
+    },
+    "HistGradientBoosting": {
+      "grouped_oof": {
+        "samples": 1200,
+        "macro_f1": 0.9883321665499883,
+        "per_class": {
+          "TLB": {
+            "precision": 0.9982993197278912,
+            "recall": 0.9783333333333334,
+            "f1-score": 0.9882154882154882,
+            "support": 600.0
+          },
+          "TUP": {
+            "precision": 0.9787581699346405,
+            "recall": 0.9983333333333333,
+            "f1-score": 0.9884488448844885,
+            "support": 600.0
+          },
+          "accuracy": 0.9883333333333333,
+          "macro avg": {
+            "precision": 0.9885287448312658,
+            "recall": 0.9883333333333333,
+            "f1-score": 0.9883321665499883,
+            "support": 1200.0
+          },
+          "weighted avg": {
+            "precision": 0.9885287448312658,
+            "recall": 0.9883333333333333,
+            "f1-score": 0.9883321665499882,
+            "support": 1200.0
+          }
+        },
+        "confusion_labels": [
+          "TLB",
+          "TUP"
+        ],
+        "confusion_matrix": [
+          [
+            587,
+            13
+          ],
+          [
+            1,
+            599
+          ]
+        ],
+        "binary": {
+          "correct_recall": 0.9983333333333333,
+          "incorrect_recall": 0.9783333333333334,
+          "balanced_accuracy": 0.9883333333333333
+        },
+        "participants": {
+          "1": {
+            "samples": 600,
+            "macro_f1": 1.0,
+            "per_class": {
+              "TLB": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 300.0
+              },
+              "TUP": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 300.0
+              },
+              "accuracy": 1.0,
+              "macro avg": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 600.0
+              },
+              "weighted avg": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 600.0
+              }
+            },
+            "confusion_labels": [
+              "TLB",
+              "TUP"
+            ],
+            "confusion_matrix": [
+              [
+                300,
+                0
+              ],
+              [
+                0,
+                300
+              ]
+            ],
+            "binary": {
+              "correct_recall": 1.0,
+              "incorrect_recall": 1.0,
+              "balanced_accuracy": 1.0
+            }
+          },
+          "2": {
+            "samples": 600,
+            "macro_f1": 0.976657329598506,
+            "per_class": {
+              "TLB": {
+                "precision": 0.9965277777777778,
+                "recall": 0.9566666666666667,
+                "f1-score": 0.9761904761904762,
+                "support": 300.0
+              },
+              "TUP": {
+                "precision": 0.9583333333333334,
+                "recall": 0.9966666666666667,
+                "f1-score": 0.9771241830065359,
+                "support": 300.0
+              },
+              "accuracy": 0.9766666666666667,
+              "macro avg": {
+                "precision": 0.9774305555555556,
+                "recall": 0.9766666666666667,
+                "f1-score": 0.976657329598506,
+                "support": 600.0
+              },
+              "weighted avg": {
+                "precision": 0.9774305555555555,
+                "recall": 0.9766666666666667,
+                "f1-score": 0.9766573295985059,
+                "support": 600.0
+              }
+            },
+            "confusion_labels": [
+              "TLB",
+              "TUP"
+            ],
+            "confusion_matrix": [
+              [
+                287,
+                13
+              ],
+              [
+                1,
+                299
+              ]
+            ],
+            "binary": {
+              "correct_recall": 0.9966666666666667,
+              "incorrect_recall": 0.9566666666666667,
+              "balanced_accuracy": 0.9766666666666667
+            }
+          }
+        }
+      },
+      "fold_macro_f1": [
+        0.976657329598506,
+        1.0
+      ],
+      "fold_std": 0.01167133520074698,
+      "fit_seconds": 1.6685149999684654
+    }
+  },
+  "selected": "LogisticRegression",
+  "holdout": {
+    "samples": 600,
+    "macro_f1": 1.0,
+    "per_class": {
+      "TLB": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 300.0
+      },
+      "TUP": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 300.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 600.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 600.0
+      }
+    },
+    "confusion_labels": [
+      "TLB",
+      "TUP"
+    ],
+    "confusion_matrix": [
+      [
+        300,
+        0
+      ],
+      [
+        0,
+        300
+      ]
+    ],
+    "binary": {
+      "correct_recall": 1.0,
+      "incorrect_recall": 1.0,
+      "balanced_accuracy": 1.0
+    },
+    "participants": {
+      "3": {
+        "samples": 600,
+        "macro_f1": 1.0,
+        "per_class": {
+          "TLB": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 300.0
+          },
+          "TUP": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 300.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 600.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 600.0
+          }
+        },
+        "confusion_labels": [
+          "TLB",
+          "TUP"
+        ],
+        "confusion_matrix": [
+          [
+            300,
+            0
+          ],
+          [
+            0,
+            300
+          ]
+        ],
+        "binary": {
+          "correct_recall": 1.0,
+          "incorrect_recall": 1.0,
+          "balanced_accuracy": 1.0
+        }
+      }
+    }
+  },
+  "holdout_refusal": {
+    "policy": "EXPERIMENTAL: training marginal min/max and unanimous final/grouped-fold models; no calibrated probability",
+    "coverage": 0.41333333333333333,
+    "unknown": 352,
+    "reasons": {
+      "POSSIBLE_OOD_EXPERIMENTAL": 352,
+      "EXPERIMENTAL_SOURCE_DOMAIN": 248
+    },
+    "coverage_per_class": {
+      "TLB": 0.8166666666666667,
+      "TUP": 0.01
+    },
+    "coverage_per_participant": {
+      "3": 0.41333333333333333
+    },
+    "accepted_metrics": {
+      "samples": 248,
+      "macro_f1": 1.0,
+      "per_class": {
+        "TLB": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 245.0
+        },
+        "TUP": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 3.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 248.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 248.0
+        }
+      },
+      "confusion_labels": [
+        "TLB",
+        "TUP"
+      ],
+      "confusion_matrix": [
+        [
+          245,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "binary": {
+        "correct_recall": 1.0,
+        "incorrect_recall": 1.0,
+        "balanced_accuracy": 1.0
+      },
+      "participants": {
+        "3": {
+          "samples": 248,
+          "macro_f1": 1.0,
+          "per_class": {
+            "TLB": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 245.0
+            },
+            "TUP": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 3.0
+            },
+            "accuracy": 1.0,
+            "macro avg": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 248.0
+            },
+            "weighted avg": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 248.0
+            }
+          },
+          "confusion_labels": [
+            "TLB",
+            "TUP"
+          ],
+          "confusion_matrix": [
+            [
+              245,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "binary": {
+            "correct_recall": 1.0,
+            "incorrect_recall": 1.0,
+            "balanced_accuracy": 1.0
+          }
+        }
+      }
+    },
+    "end_to_end_correct_recall": 0.01,
+    "end_to_end_incorrect_recall": 0.8166666666666667
+  },
+  "inference_ms_per_person_including_committee": 1.033241999684833,
+  "v4_sha256": "af61482ed98a3c71f1200933a981afbbf67853b26ea54691166a71edaf9855fd",
+  "limitations": [
+    "Processed source coordinates are not proven equivalent to crop MediaPipe world axes; no blind source fusion.",
+    "Direction-to-correctness is the requested product mapping, not independent ergonomic or medical GT.",
+    "Holdout is participant-disjoint for this candidate; historical experiments used this corpus, so results remain exploratory.",
+    "No SLOUCH GT. No verified office CCTV accuracy. Experimental rejection has no calibrated coverage guarantee."
+  ],
+  "trained_at_utc_source": "File creation time; first run predated explicit timestamp metadata",
+  "trained_at_utc": "2026-09-17T05:23:38.073085+00:00"
+}

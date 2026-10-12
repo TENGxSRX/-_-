@@ -1,0 +1,322 @@
+{
+  "fixture_status": "TEST_FIXTURE — synthetic architecture demonstration only",
+  "scientific_use": "Not real experimental evidence; no camera or participant data",
+  "frame_event": {
+    "timestamp_seconds": 0.0,
+    "camera_id": "CAM01",
+    "tracking_status": "MULTI_PERSON_SOFTWARE_PROTOTYPE",
+    "subject_count": 2,
+    "subjects": [
+      {
+        "subject_id": "PERSON_01",
+        "tracking_state": "NEW",
+        "core_valid": true,
+        "pose_quality": 0.9,
+        "landmark_count": 33,
+        "world_landmark_count": 33,
+        "bbox": [
+          0.0,
+          0.0,
+          0.4,
+          0.72
+        ],
+        "center": [
+          0.3,
+          0.585
+        ],
+        "last_seen_at": 0.0,
+        "v4_prediction": "TLB",
+        "v4_probabilities": {
+          "TLB": 0.9,
+          "TUP": 0.1
+        },
+        "v4_result": {
+          "label": "TLB",
+          "display_label": "Lean backward",
+          "confidence": 0.9,
+          "probabilities": {
+            "TLB": 0.9,
+            "TUP": 0.1
+          },
+          "feature_count": 15,
+          "fixture_only": true
+        },
+        "geometry": {
+          "valid": true,
+          "missing_landmarks": [],
+          "coordinate_units": "backend coordinates; normalized ratios are dimensionless",
+          "trunk_inclination_deg": 0.0,
+          "shoulder_tilt_deg": 0.0,
+          "hip_tilt_deg": 0.0,
+          "torso_lateral_displacement": 0.0,
+          "torso_length": 0.26999999999999996,
+          "shoulder_midpoint_x": 0.3,
+          "shoulder_midpoint_y": 0.45,
+          "hip_midpoint_x": 0.3,
+          "hip_midpoint_y": 0.72,
+          "trunk_vector": [
+            0.0,
+            -0.26999999999999996,
+            0.0
+          ],
+          "shoulder_height_asymmetry": 0.0,
+          "hip_height_asymmetry": 0.0,
+          "shoulder_to_hip_length_asymmetry": -2.0559685641206605e-16,
+          "head_to_shoulder_x": 0.0,
+          "head_to_shoulder_y": -0.7407407407407409,
+          "head_to_shoulder_z": 0.0,
+          "head_forward_proxy": 0.0,
+          "neutral_baseline_applied": false,
+          "directional_indicators": {
+            "forward": false,
+            "left": false,
+            "right": false,
+            "trunk_inclination": 0.0,
+            "shoulder_tilt": 0.0,
+            "lateral_offset": 0.0,
+            "forward_back_component": 0.0
+          }
+        },
+        "temporal_state": {
+          "timestamp_seconds": 0.0,
+          "direction": "TLB",
+          "majority_direction": "TLB",
+          "direction_confidence": 0.9,
+          "probabilities": {
+            "TLB": 0.9,
+            "TUP": 0.1
+          },
+          "geometry": {
+            "valid": true,
+            "missing_landmarks": [],
+            "coordinate_units": "backend coordinates; normalized ratios are dimensionless",
+            "trunk_inclination_deg": 0.0,
+            "shoulder_tilt_deg": 0.0,
+            "hip_tilt_deg": 0.0,
+            "torso_lateral_displacement": 0.0,
+            "torso_length": 0.26999999999999996,
+            "shoulder_midpoint_x": 0.3,
+            "shoulder_midpoint_y": 0.45,
+            "hip_midpoint_x": 0.3,
+            "hip_midpoint_y": 0.72,
+            "trunk_vector": [
+              0.0,
+              -0.26999999999999996,
+              0.0
+            ],
+            "shoulder_height_asymmetry": 0.0,
+            "hip_height_asymmetry": 0.0,
+            "shoulder_to_hip_length_asymmetry": -2.0559685641206605e-16,
+            "head_to_shoulder_x": 0.0,
+            "head_to_shoulder_y": -0.7407407407407409,
+            "head_to_shoulder_z": 0.0,
+            "head_forward_proxy": 0.0,
+            "neutral_baseline_applied": false,
+            "directional_indicators": {
+              "forward": false,
+              "left": false,
+              "right": false,
+              "trunk_inclination": 0.0,
+              "shoulder_tilt": 0.0,
+              "lateral_offset": 0.0,
+              "forward_back_component": 0.0
+            }
+          },
+          "risk_indicators": [
+            "backward_trunk"
+          ],
+          "indicator_details": [
+            {
+              "name": "backward_trunk",
+              "kind": "CORE_MODEL_STATE",
+              "status": "SUPPORTED_BY_MULTIPOSTURE_LABEL",
+              "direction": "TLB",
+              "confidence": 0.9
+            }
+          ],
+          "continuous_duration": 0.0,
+          "duration_seconds": 0.0,
+          "risk_level": "OBSERVE",
+          "pose_visible": true,
+          "warning_event": false,
+          "recovery_active": false,
+          "candidate_persistence_seconds": 0.0
+        }
+      },
+      {
+        "subject_id": "PERSON_02",
+        "tracking_state": "NEW",
+        "core_valid": true,
+        "pose_quality": 0.9,
+        "landmark_count": 33,
+        "world_landmark_count": 33,
+        "bbox": [
+          0.0,
+          0.0,
+          0.7999999999999999,
+          0.72
+        ],
+        "center": [
+          0.7,
+          0.585
+        ],
+        "last_seen_at": 0.0,
+        "v4_prediction": "TUP",
+        "v4_probabilities": {
+          "TLB": 0.1,
+          "TUP": 0.9
+        },
+        "v4_result": {
+          "label": "TUP",
+          "display_label": "Upright",
+          "confidence": 0.9,
+          "probabilities": {
+            "TLB": 0.1,
+            "TUP": 0.9
+          },
+          "feature_count": 15,
+          "fixture_only": true
+        },
+        "geometry": {
+          "valid": true,
+          "missing_landmarks": [],
+          "coordinate_units": "backend coordinates; normalized ratios are dimensionless",
+          "trunk_inclination_deg": 0.0,
+          "shoulder_tilt_deg": 0.0,
+          "hip_tilt_deg": 0.0,
+          "torso_lateral_displacement": 0.0,
+          "torso_length": 0.26999999999999996,
+          "shoulder_midpoint_x": 0.7,
+          "shoulder_midpoint_y": 0.45,
+          "hip_midpoint_x": 0.7,
+          "hip_midpoint_y": 0.72,
+          "trunk_vector": [
+            0.0,
+            -0.26999999999999996,
+            0.0
+          ],
+          "shoulder_height_asymmetry": 0.0,
+          "hip_height_asymmetry": 0.0,
+          "shoulder_to_hip_length_asymmetry": 0.0,
+          "head_to_shoulder_x": 0.0,
+          "head_to_shoulder_y": -0.7407407407407409,
+          "head_to_shoulder_z": 0.0,
+          "head_forward_proxy": 0.0,
+          "neutral_baseline_applied": false,
+          "directional_indicators": {
+            "forward": false,
+            "left": false,
+            "right": false,
+            "trunk_inclination": 0.0,
+            "shoulder_tilt": 0.0,
+            "lateral_offset": 0.0,
+            "forward_back_component": 0.0
+          }
+        },
+        "temporal_state": {
+          "timestamp_seconds": 0.0,
+          "direction": "TUP",
+          "majority_direction": "TUP",
+          "direction_confidence": 0.9,
+          "probabilities": {
+            "TLB": 0.1,
+            "TUP": 0.9
+          },
+          "geometry": {
+            "valid": true,
+            "missing_landmarks": [],
+            "coordinate_units": "backend coordinates; normalized ratios are dimensionless",
+            "trunk_inclination_deg": 0.0,
+            "shoulder_tilt_deg": 0.0,
+            "hip_tilt_deg": 0.0,
+            "torso_lateral_displacement": 0.0,
+            "torso_length": 0.26999999999999996,
+            "shoulder_midpoint_x": 0.7,
+            "shoulder_midpoint_y": 0.45,
+            "hip_midpoint_x": 0.7,
+            "hip_midpoint_y": 0.72,
+            "trunk_vector": [
+              0.0,
+              -0.26999999999999996,
+              0.0
+            ],
+            "shoulder_height_asymmetry": 0.0,
+            "hip_height_asymmetry": 0.0,
+            "shoulder_to_hip_length_asymmetry": 0.0,
+            "head_to_shoulder_x": 0.0,
+            "head_to_shoulder_y": -0.7407407407407409,
+            "head_to_shoulder_z": 0.0,
+            "head_forward_proxy": 0.0,
+            "neutral_baseline_applied": false,
+            "directional_indicators": {
+              "forward": false,
+              "left": false,
+              "right": false,
+              "trunk_inclination": 0.0,
+              "shoulder_tilt": 0.0,
+              "lateral_offset": 0.0,
+              "forward_back_component": 0.0
+            }
+          },
+          "risk_indicators": [],
+          "indicator_details": [],
+          "continuous_duration": 0.0,
+          "duration_seconds": 0.0,
+          "risk_level": "NORMAL",
+          "pose_visible": true,
+          "warning_event": false,
+          "recovery_active": false,
+          "candidate_persistence_seconds": 0.0
+        }
+      }
+    ],
+    "frame_index": 0,
+    "inference_skipped": false
+  },
+  "dashboard_cards": [
+    {
+      "subject_id": "PERSON_01",
+      "ai_posture": "TLB",
+      "ai_probabilities": {
+        "TLB": 0.9,
+        "TUP": 0.1
+      },
+      "geometry_indicators": {
+        "forward": false,
+        "left": false,
+        "right": false,
+        "shoulder_tilt": 0.0
+      },
+      "state": "OBSERVE",
+      "duration_seconds": 0.0,
+      "pose_quality": 0.9,
+      "tracking_state": "NEW"
+    },
+    {
+      "subject_id": "PERSON_02",
+      "ai_posture": "TUP",
+      "ai_probabilities": {
+        "TLB": 0.1,
+        "TUP": 0.9
+      },
+      "geometry_indicators": {
+        "forward": false,
+        "left": false,
+        "right": false,
+        "shoulder_tilt": 0.0
+      },
+      "state": "NORMAL",
+      "duration_seconds": 0.0,
+      "pose_quality": 0.9,
+      "tracking_state": "NEW"
+    }
+  ],
+  "expected_properties": {
+    "anonymous_ids": [
+      "PERSON_01",
+      "PERSON_02"
+    ],
+    "independent_v4_results": true,
+    "independent_temporal_state": true
+  }
+}

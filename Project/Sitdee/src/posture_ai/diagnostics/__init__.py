@@ -1,0 +1,19 @@
+"""Diagnostics and failure-routing helpers."""
+
+from .failure_routing import (
+    ACTIVITY_CLASSIFIER_FAILURE,
+    CORE_FAILURE,
+    PERSON_DETECTION_FAILURE,
+    POSE_FAILURE,
+    POSTURE_CLASSIFIER_FAILURE,
+    SUBTYPE_FAILURE,
+    TEMPORAL_INSTABILITY,
+    TRACKING_FAILURE,
+    classify_frame_failure,
+)
+
+__all__ = [
+    "ACTIVITY_CLASSIFIER_FAILURE", "CORE_FAILURE", "PERSON_DETECTION_FAILURE", "POSE_FAILURE",
+    "POSTURE_CLASSIFIER_FAILURE", "SUBTYPE_FAILURE", "TEMPORAL_INSTABILITY", "TRACKING_FAILURE",
+    "classify_frame_failure",
+]
